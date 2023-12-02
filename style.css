@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    color: white;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+*::selection{
+    background-color: white;
+    color: #baf027;
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+    background-color: #baf027;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#nav{
+    width: 100%;
+    height: 8.2vw;
+    padding: 0vw 8vw;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.8vw;
+    position: fixed;
+    z-index: 104;
+}
+
+#cursor{
+    height: 1.5vw;
+    width: 1.5vw;
+    background-color: #B1E032;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 103;
+}
+
+#cursor-blur{
+    height: 18vw;
+    width: 18vw;
+    background-color: #b1e0325b;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(4vw);
+    z-index: 9;
+}
+
+#nav img{
+    margin-right: 2vw;
+    height: 4.9vw;
+}
+
+#nav h4{
+    text-transform: uppercase;
+    font-size: 1vw;
+    font-weight: 600;
+}
+
+#nav h4:hover{
+    cursor: pointer;
+    color: #baf027;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.38);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 6.7vw;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -0.3vw;
+    left: -0.3vw;
+    -webkit-text-stroke: 0.15vw #B1E032;
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 1.7vw;
+    font-weight: 900;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+#page1 p{
+    font-size: 1.3vw;
+    font-weight: 500;
+}
+
+#page1 #arrow{
+    height: 12vw;
+    width: 12vw;
+    position: absolute;
+    display: flex;
+    top: 75vh;
+    left: -2%;
+    bottom: 0%;
+    background-color: transparent;
+    border: 0.2vw solid #baf027;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+    z-index: 104;
+}
+
+#page1 #arrow i{
+    font-size: 2.5vw;
+    font-weight: 100;
+}
+
+#page1 #arrow:hover {
+    scale:0.4;
+    background-color: #baf027;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 104;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 7vw;
+    font-weight: 900;
+    margin-right: 1.2vw;
+    transition: all linear 0.5s;
+    color: black;
+    -webkit-text-stroke: 0.1vw #B1E032;
+}
+
+#scroller h4:hover{
+    color: #B1E032;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    margin-top: 4vw;
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    padding: 0 7vw;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 9;
+}
+
+#about-us img{
+    height: 10vw;
+    width: 10vw;
+    border-radius: 0.5vw;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width: 55%;
+    text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 2.6vw;
+    font-weight: 800;
+    margin-bottom: 2vw;
+}
+
+#about-us-in p{
+    font-size: 1.2vw;
+    line-height: 2vw;
+}
+
+#card-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1vw;
+    position: relative;
+    z-index: 103;
+}
+
+.card{
+    height: 80%;
+    width: 24%;
+    border-radius: 1vw;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+    z-index: 10;
+}
+
+#card1{
+    background-image: url(./Images/card-container-toptracer-card-1.webp);
+
+}
+
+#card2{
+    background-image: url(./Images/card-container-advanture-card-2.webp);
+}
+
+#card3{
+    background-image: url(./Images/card-container-lessons-card-3.webp);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #B1E032;
+    padding: 1.7vw;
+    padding-top: 7vw;
+    opacity: 0;
+    transition: all ease 0.6s;
+    z-index: 10;
+}
+
+.overlay h4{
+    color: black;
+    font-size: 2vw;
+    font-weight: 900;
+    margin-bottom: 1vw;
+}
+.overlay p{
+    color: black;
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+
+.card:hover{
+    scale: 1;
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+.card:hover .overlay{
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+#green-div{
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom ,#0dba4a,#73B825 ,#9AC81F,#baf027);
+}
+
+#green-div h4{
+    color: black;
+    width: 60%;
+    text-align: center;
+    font-size: 1.7vw;
+    font-weight: 900;
+}
+
+#green-div img{
+    opacity: 0.3;
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+
+#page3{
+    height: 80vh;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page3>p{
+    text-transform: uppercase;
+    font-size: 1.6vw;
+    font-weight: 900;
+    width: 61%;
+    line-height: 2.5vw;
+    text-align: center;
+}
+
+#page3 img{
+    position: absolute;
+    height: 3vw;
+}
+
+#page3 #colon1{
+    top: 18%;
+    left: 14%;
+}
+
+#page3 #colon2{
+    bottom: 18%;
+    right: 14%;
+}
+
+#page4{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5vw;
+    position: relative;
+}
+
+.elem{
+    border-radius: 1vw;
+    height: 50%;
+    width: 27%;
+    overflow: hidden;
+    position: relative;
+}
+
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #baf027;
+    font-size: 2.2vw;
+    color: black;
+    font-weight: 900;
+    transition: all ease 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 105;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.2;
+}
+
+.elem:hover h2{
+    color: white;
+    background-color: transparent;
+}
+
+.elem:hover img{
+    scale: 1;
+}
+
+#page4 h1{
+    font-size: 5.3vw;
+    top: 5.5%;
+    position: absolute;
+    font-weight: 900;
+    color: black;
+    -webkit-text-stroke: 0.1vw white;
+}
+
+#footer{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom,#0dba4a,#73B825,#9AC81F,#B1E032);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7.5vw;
+    padding: 0 1vw;
+}
+
+#footer>img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+
+#f1 img{
+    margin-left: 5vw;
+    height: 5vw;
+}
+
+#f1,#f2,#f3,#f4{
+    z-index: 103;
+    width: fit-content;
+    position: relative;
+}
+
+#f2 h3{
+    font-size: 1.5vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 0.4vw;
+}
+
+#f3 h3{
+    font-size: 1.5vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 0.4vw;
+}
+
+#f4 h4{
+    font-size: 0.9vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: 800;
+    line-height: 1vw;
+    margin-bottom: 0.4vw;
+}
+#f4 h3{
+    font-size: 1.5vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: 900;
+    line-height: 1vw;
+    margin-bottom: 0.4vw;
+}
+
+#footer h3:hover{
+    cursor: pointer;
+    color: white;
+}
+
+#f5{
+    z-index: 103;
+}
+
+#f5 i{
+    margin-left: 5vw;
+    font-size: 3vw;
+    color: black;
+    font-weight: 100;
+}
+
+#f5 i:hover{
+    color: white;
+    cursor: pointer; 
+}
