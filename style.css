@@ -5,6 +5,12 @@
     font-family: Montserrat;
     color: white;
 }
+
+@font-face {
+    font-family: Montserrat;
+    src: url(./Fonts/Montserrat/Montserrat/Montserrat-ExtraBold.ttf);
+}
+
 html , body{
     height: 100%;
     width: 100%;
